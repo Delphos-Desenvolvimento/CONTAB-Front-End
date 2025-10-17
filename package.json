@@ -1,4 +1,12 @@
 {
+  "name": "contabil",
+  "version": "1.0.0",
+  "description": "Sistema de Contabilidade",
+  "scripts": {
+    "build": "cd Frontend && tsc -b && vite build",
+    "dev": "cd Frontend && npm run dev",
+    "start": "cd Frontend && npm run preview"
+  },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
