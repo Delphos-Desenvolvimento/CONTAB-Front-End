@@ -126,23 +126,36 @@ function Hero() {
           style={{ width: '100%' }}
         >
           <Box
-            component="img"
-            src="/images/Logo_sem_fundo_Contab[1].png"
-            alt="Contab Logo"
+            component="div"
             sx={{
-              width: { xs: '200px', md: '300px' },
-              height: 'auto',
+              display: 'flex',
+              justifyContent: 'center',
+              width: '100%',
               mb: 4,
             }}
-          />
+          >
+            <Box
+              component="img"
+              src="/images/Logo_sem_fundo_Contab[1].png"
+              alt="Contab Logo"
+              sx={{
+                width: { xs: '280px', md: '450px' },
+                height: 'auto',
+                maxWidth: '100%',
+                display: 'block',
+                margin: '0 auto',
+              }}
+            />
+          </Box>
           <Typography
             variant="h1"
             component="h1"
             sx={{
               fontWeight: 700,
               color: '#00a4f6',
-              fontSize: { xs: '2.5rem', md: '3.5rem' },
-              mb: 2,
+              fontSize: { xs: '2.8rem', md: '4rem' },
+              mb: 0.1,
+              lineHeight: 1.1,
             }}
           >
             Gestão fiscal responsável
@@ -152,8 +165,9 @@ function Hero() {
             component="p"
             sx={{
               color: 'white',
-              fontSize: { xs: '1.2rem', md: '1.5rem' },
+              fontSize: { xs: '1.4rem', md: '1.8rem' },
               mb: 4,
+              mt: 0.1,
             }}
           >
             começa com contabilidade pública de qualidade.
