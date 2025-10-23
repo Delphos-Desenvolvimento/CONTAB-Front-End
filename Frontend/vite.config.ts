@@ -13,7 +13,7 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3000,
+    port: 5173,
   },
   define: {
     'import.meta.env.VITE_APP_TITLE': JSON.stringify('Contab'),
