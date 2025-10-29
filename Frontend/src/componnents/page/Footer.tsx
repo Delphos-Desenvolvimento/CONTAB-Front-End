@@ -37,14 +37,14 @@ const FooterLink = ({ children, href }: { children: React.ReactNode; href: strin
     component={RouterLink}
     to={href}
     sx={{
-      color: 'text.secondary',
+      color: 'rgba(255, 255, 255, 0.9)',
       display: 'flex',
       alignItems: 'center',
       mb: 1.5,
       textDecoration: 'none',
       transition: 'all 0.3s ease',
       '&:hover': {
-        color: 'primary.main',
+        color: '#64b5f6',
         transform: 'translateX(4px)',
         '& .arrow-icon': {
           opacity: 1,
@@ -78,8 +78,8 @@ const SocialIcon = ({ icon: Icon, url }: { icon: React.ElementType; url: string 
     target="_blank"
     rel="noopener noreferrer"
     sx={{
-      backgroundColor: 'rgba(255, 255, 255, 0.05)',
-      color: 'text.secondary',
+      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+      color: 'white',
       '&:hover': {
         backgroundColor: 'primary.main',
         color: 'white',
@@ -87,6 +87,7 @@ const SocialIcon = ({ icon: Icon, url }: { icon: React.ElementType; url: string 
         boxShadow: '0 5px 15px rgba(26, 35, 126, 0.3)',
       },
       transition: 'all 0.3s ease',
+      border: '1px solid rgba(255, 255, 255, 0.1)'
     }}
   >
     <Icon size={18} />
@@ -101,7 +102,7 @@ const ContactItem = ({ icon, text }: { icon: React.ReactNode; text: string }) =>
       alignItems: 'flex-start',
       mb: 2.5,
       '& svg': {
-        color: 'primary.main',
+        color: '#64b5f6',
         mt: 0.5,
         mr: 2,
         flexShrink: 0,
@@ -109,7 +110,7 @@ const ContactItem = ({ icon, text }: { icon: React.ReactNode; text: string }) =>
     }}
   >
     {icon}
-    <Typography variant="body2" color="text.secondary">
+    <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.9)' }}>
       {text}
     </Typography>
   </Box>
@@ -169,7 +170,7 @@ const Footer = () => {
     },
     {
       icon: <Mail size={18} />,
-      text: 'contato@contabil.com.br',
+      text: 'contato@contab.com.br',
     },
     {
       icon: <Clock size={18} />,
@@ -196,7 +197,7 @@ const Footer = () => {
       component="footer"
       sx={{
         backgroundColor: '#0a1929', // Azul bem escuro
-        color: 'rgba(255, 255, 255, 0.9)', // Texto branco com leve transparência
+        color: 'rgba(255, 255, 255, 1)', // Texto branco mais claro
         pt: { xs: 8, md: 12 },
         pb: { xs: 6, md: 8 },
         position: 'relative',
@@ -219,7 +220,7 @@ const Footer = () => {
             <Box 
               component="img"
               src="/images/Logo_sem_fundo_Contab[1].png"
-              alt="Contabil"
+              alt="Contab"
               sx={{
                 height: { xs: 40, md: 60 },
                 width: 'auto',
@@ -228,7 +229,7 @@ const Footer = () => {
                 mb: 2,
               }}
             />
-            <Typography variant="body2" color="text.secondary" sx={{ mb: 3, lineHeight: 1.7 }}>
+            <Typography variant="body2" color="rgba(255, 255, 255, 0.9)" sx={{ mb: 3, lineHeight: 1.7 }}>
               Soluções contábeis completas para o sucesso do seu negócio. Oferecemos serviços personalizados com excelência e comprometimento.
             </Typography>
             
@@ -253,7 +254,7 @@ const Footer = () => {
               <Typography
                 variant="h6"
                 sx={{
-                  color: 'text.primary',
+                  color: '#64b5f6',
                   fontWeight: 700,
                   mb: 3,
                   position: 'relative',
@@ -264,7 +265,7 @@ const Footer = () => {
                     left: 0,
                     width: '40px',
                     height: '3px',
-                    background: 'linear-gradient(90deg, #2979ff 0%, #00b0ff 100%)',
+                    background: '#64b5f6',
                     borderRadius: '2px',
                   },
                 }}
@@ -288,7 +289,7 @@ const Footer = () => {
             <Typography
               variant="h6"
               sx={{
-                color: 'text.primary',
+                color: '#64b5f6',
                 fontWeight: 700,
                 mb: 3,
                 position: 'relative',
@@ -299,14 +300,14 @@ const Footer = () => {
                   left: 0,
                   width: '40px',
                   height: '3px',
-                  background: 'linear-gradient(90deg, #2979ff 0%, #00b0ff 100%)',
+                  background: '#64b5f6',
                   borderRadius: '2px',
                 },
               }}
             >
               Newsletter
             </Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
+            <Typography variant="body2" sx={{ mb: 3, color: 'rgba(255, 255, 255, 0.9)' }}>
               Inscreva-se para receber nossas últimas notícias e atualizações.
             </Typography>
             <Box component="form" onSubmit={handleSubscribe} noValidate>
@@ -322,8 +323,9 @@ const Footer = () => {
                   required
                   sx={{
                     '& .MuiOutlinedInput-root': {
+                      color: 'white',
                       '& fieldset': {
-                        borderColor: 'divider',
+                        borderColor: 'rgba(255, 255, 255, 0.2)',
                       },
                       '&:hover fieldset': {
                         borderColor: 'primary.main',
@@ -331,6 +333,10 @@ const Footer = () => {
                       '&.Mui-focused fieldset': {
                         borderColor: 'primary.main',
                       },
+                    },
+                    '& .MuiInputBase-input::placeholder': {
+                      color: 'rgba(255, 255, 255, 0.6)',
+                      opacity: 1,
                     },
                   }}
                 />
@@ -350,7 +356,7 @@ const Footer = () => {
                 </Button>
               </Box>
             </Box>
-            <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1 }}>
+            <Typography variant="caption" sx={{ display: 'block', mt: 1, color: 'rgba(255, 255, 255, 0.7)' }}>
               Nós respeitamos sua privacidade. Cancele a inscrição a qualquer momento.
             </Typography>
           </Grid>
@@ -369,13 +375,13 @@ const Footer = () => {
           }}
         >
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.9)' }}>
               © {new Date().getFullYear()}
             </Typography>
             <Box 
               component="img"
               src="/images/Logo_sem_fundo_Contab[1].png"
-              alt="Contabil"
+              alt="Contab"
               sx={{
                 height: 20,
                 width: 'auto',
@@ -386,7 +392,7 @@ const Footer = () => {
                 mx: 0.5
               }}
             />
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.9)' }}>
               . Todos os direitos reservados.
             </Typography>
           </Box>
@@ -396,7 +402,7 @@ const Footer = () => {
               component={RouterLink}
               to="/politica-privacidade"
               sx={{
-                color: 'text.secondary',
+                color: 'rgba(255, 255, 255, 0.7)',
                 textDecoration: 'none',
                 fontSize: '0.85rem',
                 transition: 'color 0.3s ease',
@@ -411,7 +417,7 @@ const Footer = () => {
               component={RouterLink}
               to="/termos-uso"
               sx={{
-                color: 'text.secondary',
+                color: 'rgba(255, 255, 255, 0.7)',
                 textDecoration: 'none',
                 fontSize: '0.85rem',
                 transition: 'color 0.3s ease',
@@ -426,7 +432,7 @@ const Footer = () => {
               component={RouterLink}
               to="/cookies"
               sx={{
-                color: 'text.secondary',
+                color: 'rgba(255, 255, 255, 0.7)',
                 textDecoration: 'none',
                 fontSize: '0.85rem',
                 transition: 'color 0.3s ease',

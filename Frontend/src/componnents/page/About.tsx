@@ -180,10 +180,11 @@ const SolutionCard = ({ title, description, icon: Icon, delay = 0 }: SolutionCar
               endIcon={<ArrowRight size={18} />}
               sx={{
                 alignSelf: 'flex-start',
-                color: 'primary.main',
+                color: '#64b5f6',
                 fontWeight: 600,
                 p: 0,
                 '&:hover': {
+                  color: '#42a5f5',
                   backgroundColor: 'transparent',
                   '& .MuiButton-endIcon': {
                     transform: 'translateX(4px)',
@@ -314,7 +315,7 @@ function About() {
                   background: 'linear-gradient(90deg, #1a237e 0%, #2979ff 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
-                }}>Contabil</Box> é líder em tecnologia para gestão pública
+                }}>Contab</Box> é líder em tecnologia para gestão pública
               </Typography>
               <Typography 
                 variant="h6" 

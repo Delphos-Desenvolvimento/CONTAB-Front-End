@@ -47,18 +47,46 @@ export default function Login() {
 
   return (
     <Box
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      minHeight="100vh"
-      bgcolor="#f5f5f5"
+      sx={{
+        minHeight: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundImage: 'url(/images/Pagina_Principal_sem_textos[1].png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
-      <Paper elevation={3} sx={{ p: 4, width: '100%', maxWidth: 400 }}>
-        <Box textAlign="center" mb={3}>
-          <Typography variant="h5" component="h1">
-            Área Administrativa
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
+      <Paper elevation={1} sx={{ 
+        p: 2, 
+        width: '100%', 
+        maxWidth: 360,
+        minHeight: 280,
+        position: 'relative', 
+        backgroundColor: 'rgba(255, 255, 255, 0.95)',
+        borderRadius: '12px',
+        boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+      }}>
+        <Box textAlign="center" mb={3} sx={{ 
+          display: 'flex', 
+          flexDirection: 'column', 
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+          <Box 
+            component="img"
+            src="/images/Logo_sem_fundo_Contab_2[1].png"
+            alt="Logo"
+            sx={{ 
+              width: '280px',
+              maxWidth: '100%',
+              height: 'auto',
+              mb: 1.5,
+              objectFit: 'contain'
+            }}
+          />
+          <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.9rem', mt: 1 }}>
             Faça login para continuar
           </Typography>
         </Box>
@@ -71,6 +99,7 @@ export default function Login() {
 
         <Box component="form" onSubmit={handleSubmit} noValidate>
           <TextField
+            size="small"
             margin="normal"
             required
             fullWidth
@@ -84,6 +113,7 @@ export default function Login() {
             disabled={loading}
           />
           <TextField
+            size="small"
             margin="normal"
             required
             fullWidth
@@ -100,8 +130,8 @@ export default function Login() {
           <Button
             type="submit"
             fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
+            variant="outlined"
+            sx={{ '& .MuiOutlinedInput-root': { borderRadius: '8px' }, mt: 3, mb: 2, fontSize: '1.1rem', padding: '8px 16px', borderRadius: '8px' }}
             disabled={loading}
           >
             {loading ? 'Entrando...' : 'Entrar'}
